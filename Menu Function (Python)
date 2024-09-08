@@ -1,0 +1,46 @@
+#MENU FUNCTION
+#define main():
+def main():
+    def menuFunction():
+        from numpy import random
+        import random
+        repeat = True
+        userNum = 0
+        randomNum = random.randrange(1, 1000, 1)
+        randomList = random.sample(range(10, 30), 5)
+        while repeat == True:
+            menu = "*** MAIN MENU *** \n G] Get a number \n S] Display current sum \n A] Display current average \n H] Display the current greatest number \n L] Display the current lowest number \n Q] Quit"
+            print(menu)
+            print("The random number is..", randomNum)
+            print("The random list of numbers is..", randomList)
+            userInput = input("Please enter selection ")
+            if userInput == "G":
+                userNum = int(input("Please enter a number "))
+                print("Your number is", userNum)
+            elif userNum == 0 and userInput == "S":
+                    print("Please type in G to generate a random sum of your number")
+            elif userInput == "S" and userNum >= 1:
+                    print("Here is the sum of your number added by", randomNum, ": ", userNum + randomNum)
+            elif userInput == "A" and userNum >= 1:
+                randomList.append(userNum)
+                print("Here is a random array with your number included", randomList)
+                print("Now, here is the average",sum(randomList) / len(randomList))
+            elif userInput =="A" and userNum == 0:
+                print("Please type in G to display the current average of the list of numbers")
+            elif userInput == "H" and userNum >= 1:
+                randomList.append(userNum)
+                print("Here is the largest number in the array", max(randomList))
+            elif userInput == "H" and userNum == 0:
+                print("Please type in G to generate display the greatest number in the list of numbers")
+            elif userInput == "L" and userNum >= 1:
+                randomList.append(userNum)
+                print("Here is the smallest number in the array", min(randomList))
+            elif userInput == "L" and userNum == 0:
+                print("Please type in G to display the lowest number in the list of numbers")
+            elif userInput == "Q":
+                print("Thank you for using this program")
+                repeat = False
+            else:
+                print("Please enter a valid selection such as: 'G','S','A','H','L', or,'Q'")
+    menuFunction()
+main()
